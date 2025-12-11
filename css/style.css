@@ -1,61 +1,20 @@
-/* Reset simples */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+const hexa = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+
+const btn = document.getElementById('btn');
+const color = document.querySelector('.span-color');
+const mainColor = document.getElementById('main-color');
+
+// Função geradora de cor HEX
+function generateHexColor() {
+  let hex = '#';
+  for (let i = 0; i < 6; i++) {
+    hex += hexa[Math.floor(Math.random() * hexa.length)];
+  }
+  return hex;
 }
 
-/* Corpo da página */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    sans-serif;
-  background-color: #f1f5f8;
-  color: #102a43;
-}
-
-/* Navbar */
-header .navbar {
-  padding: 1rem 0;
-}
-
-/* Card central */
-.card {
-  border: none;
-  border-radius: 12px;
-  background: #ffffffcc;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  min-width: 280px;
-}
-
-/* Texto da cor atual */
-.span-color {
-  font-weight: 700;
-}
-
-/* Botão personalizado */
-#btn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease,
-    background-color 0.15s ease;
-}
-
-#btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-}
-
-#btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Ajuste do main para centralização vertical */
-main {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+btn.addEventListener('click', function () {
+  const hexColor = generateHexColor();
+  mainColor.style.backgroundColor = hexColor;
+  color.textContent = hexColor;
+});
