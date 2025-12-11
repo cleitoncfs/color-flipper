@@ -1,0 +1,90 @@
+/* Reset simples */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background-color: #f1f5f8;
+  color: #102a43;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container principal */
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Cartão central */
+.card {
+  background-color: #ffffffcc;
+  backdrop-filter: blur(6px);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  display: inline-block;
+  min-width: 280px;
+}
+
+/* Título */
+h1 {
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Texto de descrição */
+.description {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+  color: #5a7184;
+}
+
+/* Área que mostra a cor */
+.color-display {
+  margin-bottom: 20px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #e0e7ff;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.color-display .label {
+  font-weight: 600;
+}
+
+.span-color {
+  font-weight: 700;
+}
+
+/* Botão */
+#btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #102a43;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+#btn:hover {
+  background-color: #243b53;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+#btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
